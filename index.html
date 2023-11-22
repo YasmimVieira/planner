@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="/path/to/material-icons/iconfont/material-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Planner</title>
 </head>
 <body>
-    
+    <main>
+        <header class="calendar__nav">
+            <button class="calendar__button" onclick="moveDate('prev')"><span>&#10094</span></button>
+            <h1 class="calendar__month"></h1>
+            <button class="calendar__button" onclick="moveDate('next')"><span>&#10095</span></button>
+        </header>
+
+        <section class="calendar__weekends">
+            <div>Segunda</div>
+            <div>Terça</div>
+            <div>Quarta</div>
+            <div>Quinta</div>
+            <div>Sexta</div>
+            <div>Sábado</div>
+            <div>Domingo</div>
+        </section>
+        <section class="calendar__days"></section>
+    </main>
 </body>
-</html>
+
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<script src="/js/index.js"></script>
+</html> 

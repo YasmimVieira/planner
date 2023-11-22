@@ -1,0 +1,15 @@
+.calendar__nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar__button {
+    background: none;
+    border-radius: 100%;
+}
+
+.calendar__button > span {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
