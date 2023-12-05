@@ -15,7 +15,8 @@ const calendar = document.querySelector(".calendar"),
   addEventTitle = document.querySelector(".event-name "),
   addEventFrom = document.querySelector(".event-time-from "),
   addEventTo = document.querySelector(".event-time-to "),
-  addEventSubmit = document.querySelector(".add-event-btn ");
+  addEventSubmit = document.querySelector(".add-event-btn "),
+  addObservation = document.querySelector(".event-observation");
 
 let today = new Date();
 let activeDay;
@@ -455,4 +456,13 @@ function convertTime(time) {
   timeHour = timeHour % 12 || 12;
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
+}
+
+function sendingEvent() {
+    axios.post('add', document.querySelector('#myForm'), {
+        eventName: addEventTitle.value,
+        eventFrom: addEventFrom.value,
+        eventTo: addEventTo.value,
+        observation: addObservation.value
+    })
 }
