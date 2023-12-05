@@ -23,37 +23,19 @@ let month = today.getMonth();
 let year = today.getFullYear();
 
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
 ];
-
-// const eventsArr = [
-//   {
-//     day: 13,
-//     month: 11,
-//     year: 2022,
-//     events: [
-//       {
-//         title: "Event 1 lorem ipsun dolar sit genfa tersd dsad ",
-//         time: "10:00 AM",
-//       },
-//       {
-//         title: "Event 2",
-//         time: "11:00 AM",
-//       },
-//     ],
-//   },
-// ];
 
 const eventsArr = [];
 getEvents();
@@ -231,7 +213,7 @@ function gotoDate() {
 
 //function get active day day name and date and update eventday eventdate
 function getActiveDay(date) {
-  const day = new Date(year, month, date);
+  const day = new Date(year, month, date).toLocaleDateString("pt-BR")
   const dayName = day.toString().split(" ")[0];
   eventDay.innerHTML = dayName;
   eventDate.innerHTML = date + " " + months[month] + " " + year;
@@ -261,7 +243,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h3>Nenhum evento criado</h3>
         </div>`;
   }
   eventsContainer.innerHTML = events;
